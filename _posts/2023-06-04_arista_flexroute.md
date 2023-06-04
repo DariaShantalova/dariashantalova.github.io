@@ -8,8 +8,8 @@ Applyed only on hardware
 - Arista 7280R3 Universal Leaf platforms.
 
 Full article can be found here.
-https://www.arista.com/en/solutions/flexroute-engine-ip-forwarding
-https://arista.my.site.com/AristaCommunity/s/article/inet-edge-config#Comm_Kna_ka08C0000008TzYQAU_74
+#https://www.arista.com/en/solutions/flexroute-engine-ip-forwarding
+#https://arista.my.site.com/AristaCommunity/s/article/inet-edge-config#Comm_Kna_ka08C0000008TzYQAU_74
 
 
 Actual config templates:
