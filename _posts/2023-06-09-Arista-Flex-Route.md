@@ -9,3 +9,9 @@ Applyed only on hardware
 
 Full article can be found here.
 https://www.arista.com/en/solutions/flexroute-engine-ip-forwarding
+https://arista.my.site.com/AristaCommunity/s/article/inet-edge-config#Comm_Kna_ka08C0000008TzYQAU_74
+
+```
+ip hardware fib optimize prefix-length 24
+ipv6 hardware fib optimize prefix-length 48
+```
