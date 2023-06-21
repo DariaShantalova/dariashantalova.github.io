@@ -1,0 +1,4 @@
+### Books
+Juniper Books <https://www.juniper.net/documentation/jnbooks/us/en/day-one-books>
+
+ Recommend reading Brian Petersen's Hardware Defined Networking, where, among other things, he describes the mechanisms for avoiding hash conflicts.
