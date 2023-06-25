@@ -3,4 +3,19 @@ Sources:
 * <https://thenetworksherpa.com/tcam-in-the-forwarding-engine/>
 * <https://linkmeup.ru/blog/1235/> Packet Way
 * Brian Petersen Hardware-Defined Networking Kindle Edition
+
+Пост является вольным конспектом этих ресурсов. Направлен на самообучение путем структурирования информации.
+
+# Архитектура сетевых устройств
   
+<img width="730" alt="Screenshot 2023-06-25 at 22 23 20" src="https://github.com/DariaShantalova/dariashantalova.github.io/assets/34622678/1c9f1710-5158-441f-bf26-4094e478fb77">
+
+1. электрический или световой сигнал попадает через физический интерфес на устройство
+2. Обрабатывается в поток битов
+3. Вычленяются заголвки (парсинг - ethernet, mpls, ip и тд)
+4. Traffic manager - происходит обработка, решение куда послать, полисинг, буферезация, фильтры, qos и т д
+5. Происходит обратное превращение этого всего в биты
+6. Отправка на физические интерфей
+
+   3,4,5 существует благодоря control plane, на котором работают протоколы маршрутизауии
+   
