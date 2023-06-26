@@ -4,6 +4,9 @@ Sources:
 * <https://thenetworksherpa.com/tcam-in-the-forwarding-engine/>
 * <https://linkmeup.ru/blog/1235/> Packet Way
 * Brian Petersen Hardware-Defined Networking Kindle Edition
+* <https://habr.com/ru/companies/selectel/articles/313150/ >
+  Для последнего десятилетия характерна тенденция к маршрутизации в софте. Для всех сетевых функций предлагаются программные альтернативы. Отсюда и DMA, DPDK, VPP, SR-IOV, которые и правда позволяют творить невиданные прежде вещи.
+
 
 
 Пост является вольным конспектом этих ресурсов. Направлен на самообучение путем структурирования информации.
