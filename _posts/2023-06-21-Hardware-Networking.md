@@ -43,5 +43,23 @@ Sources:
 Далее разбитие на ячейки, чтобы не было проблем по сбору.
 Ячейка маленькая, расстояние одинаковое, доходит за одно время, еще и пронумерована.
 
+
+##  Типы чипов
+# Чипы
+На сегодняшний день нет идеального варианта, поэтому для каждой цели ищется компромисс.
+
+Чипы коммутацииЖ
+* CPU - Central Process Unit
+* FPGA - Field Programmable Gate Array
+* ASIC - Application Specific Integrated Cirfcuit
+* NP - network processor
+* Programmable ASIC
+
+Чипы памяти:
+* RAM - Random Access Memory
+* CAM - Content Access Memory
+* TCAM - Ternary Content Access Memory
+* Алгоритмический поиск
+  
  
    
