@@ -18,4 +18,11 @@ Sources:
 6. Отправка на физические интерфей
 
    3,4,5 существует благодоря control plane, на котором работают протоколы маршрутизауии
+
+   блок задач - чип
+   преобразование в биты, работа с физикой - PHY - обычно это ASIC
+   CONTROL PLANE - CPU + RAM
+   Parser, Traffic management, Deparser (обработка заголовков, перенаправление трафика - Packet Forwarding Manager) -
+   может быть Network Processor, FPGA, cпециализированный ASIC)
+   Parser - TCAM, RAM, 
    
