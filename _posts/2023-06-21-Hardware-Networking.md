@@ -125,6 +125,19 @@ Sources:
 (+) очень высокая производительность
 
 
+## Чипы для датацентров
+* Broadcom (Jericho, Qumran etc)
+* Mellanox ( Spectrum/NVIDIA)
+* Intel
+
+в датацентрах в основном все делится на edge, spine, leaf
+edge: MPLS, RSVP-TE, BGP, VPN и тд
+spine: молотилка трафика, может быть vxlan
+leaf: Qos, ACL, Vxlan
+
+новые чипы выпускаются регулярно, соревнуясь в производительности
+так же популярным запросом стала телеметрия
+
 
    
 
