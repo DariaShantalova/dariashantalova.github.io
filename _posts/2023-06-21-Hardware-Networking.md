@@ -247,8 +247,8 @@ MMU Memory Management Unit
 Занятость в каждый момент времени  
 Можно ли поместить пакет в буфер, в какой  
 
-TM - Traffic Manager 
-Qos Multicast
+TM - Traffic Manager   
+Qos Multicast  
 Пакет мултикаст - дублировние на количество чипов - запись информации в VOQ - дублирование на интерфейсы
 
 
