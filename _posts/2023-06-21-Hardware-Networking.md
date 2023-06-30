@@ -237,7 +237,7 @@ HMC (Hybrid Memory Cube) - та же технология TSV, стек из DRA
 <img width="702" alt="Screenshot 2023-06-30 at 12 57 26" src="https://github.com/DariaShantalova/dariashantalova.github.io/assets/34622678/5c09ed29-0827-4254-954c-a6b1cf7c53a3">
 
 ## Архитектура сетевых ASIC логика
-pipeline  - приключения пакета от входного интерфейса к выходному  
+ 
 
 <img width="726" alt="Screenshot 2023-06-30 at 17 29 05" src="https://github.com/DariaShantalova/dariashantalova.github.io/assets/34622678/118b7911-824a-41d5-891d-15b22845685c">
 
@@ -250,6 +250,9 @@ MMU Memory Management Unit
 TM - Traffic Manager   
 Qos Multicast  
 Пакет мултикаст - дублировние на количество чипов - запись информации в VOQ - дублирование на интерфейсы
+
+pipeline - процесс доставки пакета от парсера до депарсера  
+возможен программируемый pipeline
 
 
 
