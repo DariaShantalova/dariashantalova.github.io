@@ -9,7 +9,7 @@ Sources:
 * <https://habr.com/ru/articles/307696/> Juniper Hardware
 * <https://linkmeup.ru/podcasts/1063/> о алгоритмическом поиске
 * <https://linkmeup.ru/blog/1244/> QoS
-* <https://books.google.ru/books?id=kzstoFdvZ2sC&pg=PR8&lpg=PR8&dq=shared+memory+vs+voq&source=bl&ots=mTy-1ifsRK&sig=ACfU3U0DHx37_i_oDKvDJTEh72g6pSW-Ng&hl=ru&sa=X&ved=2ahUKEwjnx9el0LPnAhWHAhAIHUF6CeIQ6AEwCHoECAgQAQ#v=onepage&q=shared%20memory%20vs%20voq&f=false > High Performance Routers
+* <https://books.google.ru/books?id=kzstoFdvZ2sC&pg=PR8&lpg=PR8&dq=shared+memory+vs+voq&source=bl&ots=mTy-1ifsRK&sig=ACfU3U0DHx37_i_oDKvDJTEh72g6pSW-Ng&hl=ru&sa=X&ved=2ahUKEwjnx9el0LPnAhWHAhAIHUF6CeIQ6AEwCHoECAgQAQ#v=onepage&q=shared%20memory%20vs%20voq&f=false> High Performance Routers
 
 
 Пост является вольным конспектом этих ресурсов. Направлен на самообучение путем структурирования информации.
