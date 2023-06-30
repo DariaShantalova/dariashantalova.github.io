@@ -222,7 +222,20 @@ Juniper - 3 Asic
 
 расположение:
 - для RJ-45 - чип PHY - ASIC установленный на плате
-оптика - DSP PHY (на трансивере модуль) 
+оптика - DSP PHY (на трансивере модуль)
+
+### Packaging, Advanced Packaging
+Packaging - процесс запаковки кристалла в корпус
+WLP - Wafer Level packging - установка нескольких микросхем на одну вафлю
+чиплет
+интерпозер - электрическое соединение между чиплетами
+
+HBM - high bandwith memory - широкие шины взаимодействия между чиплетам
+TSV - Through Silicon Via - микроскопические отверстия в кристале заполненные металлом
+HMC (Hybrid Memory Cube) - та же технология TSV, стек из DRAM
+пример Jericho 2 - HBM cоединена TSV и связана интерпозером
+<img width="702" alt="Screenshot 2023-06-30 at 12 57 26" src="https://github.com/DariaShantalova/dariashantalova.github.io/assets/34622678/5c09ed29-0827-4254-954c-a6b1cf7c53a3">
+
 
 
 
