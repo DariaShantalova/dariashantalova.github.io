@@ -188,7 +188,18 @@ leaf: Qos, ACL, Vxlan
 отдельный ASIC, реализующий поиск IP,  с ним же рядом ставится RAM
 дешевле и лучше по тепловыделению
 
-   
+
+## Архитектура  сетевых ASIC
+
+   <img width="702" alt="Screenshot 2023-06-30 at 12 57 26" src="https://github.com/DariaShantalova/dariashantalova.github.io/assets/34622678/8ac3a0b4-bed3-4395-8235-b9b19221b546">
+
+отдельные компоненты (Ip-core) - разными производителями
+например SerDes - Inphi
+могут быть частью одного кристалла, напечатанного на плате
+могут быть вынесены отдельно каждая
+пример HBM
+Juniper - 3 Asic
+
 
    
 
