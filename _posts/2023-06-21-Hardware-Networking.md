@@ -401,6 +401,17 @@ n линейных карт n*10*8 очередей
 
 <img width="472" alt="Screenshot 2023-07-01 at 22 20 02" src="https://github.com/DariaShantalova/dariashantalova.github.io/assets/34622678/44be512e-8ed2-4b5b-a0d4-8c07aa22e050">
 
+## Shallow Buffers and Deep Buffers
+Shallow Buffers обычно до 100 мб расположены на чипе on chip buffers
+deep buffers - внешняя память
+Arista 7280QR - 32 Гб
+Juniper PTX, QFX10000 - чип Q5 - HMC - Hybrid Memory Cube - 4 Гб
+Broadcom Jericho+ - GDDR5 4 гб 
+Broadcom Jericho2 - HBM2 - 8 Гб
+**шина от ASIC до памяти - узкое место - определяет производительность чипа**
+c развитием WLP Deep Bufer может быть рядом с чипом
+но интерпозер все равно узкое место
+
 
 
 
