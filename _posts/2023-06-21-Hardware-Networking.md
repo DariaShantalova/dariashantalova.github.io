@@ -382,6 +382,23 @@ alpha = 1/64, при максимальной загрузке только по
 машина поворачивающая налево блокирует движущиеся прямо
 выходной интерфейс один и затор на нем блокирует продвижение
 
+### VOQ - Virtual Output Queue
+1 интерфейс на выход - 8 очередей
+10 интерфейсов на коммутаторе - 80 очередей
+n линейных карт n*10*8 очередей
+на одну виртуальную очередь FIFO приходится n очередей - поэтому работа арбитра все равно необходима
+
+<img width="517" alt="Screenshot 2023-07-01 at 22 02 03" src="https://github.com/DariaShantalova/dariashantalova.github.io/assets/34622678/806e439e-7c37-43ff-b6e7-6f9a7507dc7e">
+
+### Combined Input Output Queiung (CIOQ) with VOQ
+(-) недостаток размещения памяти в двух местах - цена и потребление энергии больше
+(+-) Head of Line Block - ecли трафик идет на два порта находящиеся за одним NLP
+
+<img width="523" alt="Screenshot 2023-07-01 at 22 13 31" src="https://github.com/DariaShantalova/dariashantalova.github.io/assets/34622678/cc62b98f-a9c8-40e8-b29d-a8df65c2592e">
+
+**Сравнение**
+
+<img width="472" alt="Screenshot 2023-07-01 at 22 20 02" src="https://github.com/DariaShantalova/dariashantalova.github.io/assets/34622678/44be512e-8ed2-4b5b-a0d4-8c07aa22e050">
 
 
 
