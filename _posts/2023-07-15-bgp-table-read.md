@@ -17,16 +17,16 @@ AS Path Attributes: Or-ID - Originator ID, C-LST - Cluster List, LL Nexthop - Li
 The * means that this is a valid route and that BGP is able to use it.  
 The > means that this entry has been selected as the best path.  
 
- i - through iGP, with network command
- ? - redistibution
- e - will never see (refered to EGP)
+ i - through iGP, with network command  
+ ? - redistibution  
+ e - will never see (refered to EGP)  
 
-supressed: BGP knows the network but won’t advertise it, this can occur when the network is part of a summary.
-damped: BGP doesn’t advertise this network because it was flapping too often (network appears, disapears, appears, etc.) so it got a penalty.
-history: BGP learned this network but doesn’t have a valid route at the moment.
-RIB-failure: BGP learned this network but didn’t install it in the routing table. This occurs when another routing protocol with a lower administrative distance also learned it.
-stale: this is used for non-stop forwarding, this entry has to be refreshed when the remote BGP neighbor has returned.
+supressed: BGP knows the network but won’t advertise it, this can occur when the network is part of a summary.  
+damped: BGP doesn’t advertise this network because it was flapping too often (network appears, disapears, appears, etc.) so it got a penalty.  
+history: BGP learned this network but doesn’t have a valid route at the moment.  
+RIB-failure: BGP learned this network but didn’t install it in the routing table. This occurs when another routing protocol with a lower administrative distance also learned it.  
+stale: this is used for non-stop forwarding, this entry has to be refreshed when the remote BGP neighbor has returned.  
 
- BGP table version - every time the best path changes this number will increase  
+ BGP table version - every time the best path changes this number will increase    
  
  
