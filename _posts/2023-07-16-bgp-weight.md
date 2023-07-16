@@ -83,3 +83,19 @@ AS Path Attributes: Or-ID - Originator ID, C-LST - Cluster List, LL Nexthop - Li
  * >     2.2.2.0/24             192.168.12.2          0       100     0       2 i
  *       2.2.2.0/24             192.168.13.3          0       100     0       2 i
 ```
+
+```
+R1(config-router-bgp)#neighbor 192.168.13.3 weight 500
+R1(config-router-bgp)#show ip bgp
+BGP routing table information for VRF default
+Router identifier 1.1.1.1, local AS number 1
+Route status codes: * - valid, > - active, # - not installed, E - ECMP head, e - ECMP
+                    S - Stale, c - Contributing to ECMP, b - backup, L - labeled-unicast
+Origin codes: i - IGP, e - EGP, ? - incomplete
+AS Path Attributes: Or-ID - Originator ID, C-LST - Cluster List, LL Nexthop - Link Local Nexthop
+
+         Network                Next Hop            Metric  LocPref Weight  Path
+ * >     2.2.2.0/24             192.168.13.3          0       100     500     2 i
+ *       2.2.2.0/24             192.168.12.2          0       100     0       2 i
+R1(config-router-bgp)#
+```
