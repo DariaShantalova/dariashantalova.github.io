@@ -66,6 +66,105 @@ AS Path Attributes: Or-ID - Originator ID, C-LST - Cluster List, LL Nexthop - Li
          Network                Next Hop            Metric  LocPref Weight  Path
  * >     10.10.10.10/32         192.168.12.1          0       100     0       1 1 1 1 1 10 i
 ```
-**Config**
+```
+ISP3#show ip bgp
+BGP routing table information for VRF default
+Router identifier 192.168.13.3, local AS number 3
+Route status codes: * - valid, > - active, # - not installed, E - ECMP head, e - ECMP
+                    S - Stale, c - Contributing to ECMP, b - backup, L - labeled-unicast
+Origin codes: i - IGP, e - EGP, ? - incomplete
+AS Path Attributes: Or-ID - Originator ID, C-LST - Cluster List, LL Nexthop - Link Local Nexthop
+
+         Network                Next Hop            Metric  LocPref Weight  Path
+ * >     10.10.10.10/32         192.168.13.1          0       100     0       1 10 i
+ISP3#
+```
+**Config**  
+**Customer**
+```
+interface Ethernet1
+   no switchport
+   ip address 192.168.10.10/24
+!
+ip routing
+!
+ip prefix-list LOOPBACK seq 10 permit 10.10.10.10/32
+!
+route-map SET_COMMUNITY permit 10
+   match ip address prefix-list LOOPBACK
+   set community 64984:0
+!
+route-map SET_COMMUNITY permit 20
+!
+router bgp 10
+   neighbor 192.168.10.1 remote-as 1
+   neighbor 192.168.10.1 route-map SET_COMMUNITY out
+   neighbor 192.168.10.1 send-community
+   network 10.10.10.10/32
+!
+```
+**ISP1**
+```
+interface Ethernet1
+   no switchport
+   ip address 192.168.10.1/24
+!
+interface Ethernet2
+   no switchport
+   ip address 192.168.12.1/24
+!
+interface Ethernet3
+   no switchport
+   ip address 192.168.13.1/24
+!
+ip routing
+!
+ip community-list 1 permit 64984:0
+!
+route-map PREPEND permit 10
+   match community 1
+   set as-path prepend 1 1 1 1
+!
+route-map PREPEND permit 20
+!
+router bgp 1
+   neighbor 192.168.10.10 remote-as 10
+   neighbor 192.168.12.2 remote-as 2
+   neighbor 192.168.12.2 route-map PREPEND out
+   neighbor 192.168.13.3 remote-as 3
+!
+end
+```
+**ISP2**
+```
+hostname ISP2
+!
+interface Ethernet1
+   no switchport
+   ip address 192.168.12.2/24
+!
+interface Ethernet2
+!
+ip routing
+!
+router bgp 2
+   neighbor 192.168.12.1 remote-as 1
+!
+```
+**ISP3**
+```
+interface Ethernet1
+   no switchport
+   ip address 192.168.13.3/24
+!
+ip routing
+!
+router bgp 3
+   neighbor 192.168.13.1 remote-as 1
+!
+end
+```
+
+
 
   
