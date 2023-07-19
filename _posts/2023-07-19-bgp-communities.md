@@ -7,6 +7,10 @@ example 3356:70
 * No-Export - don't advertise prefix to anu eBGP neighbors
 * Local-AS - don't advertise prefixes outside of sub-as (confederations)
 
+## LAB
+![photo1689767367](https://github.com/DariaShantalova/dariashantalova.github.io/assets/34622678/d49087b7-869c-4759-a1fb-93bfee2f0bc8)
+
+
 **Before**
 ```
 ISP1(config-router-bgp)#show ip bgp sum
