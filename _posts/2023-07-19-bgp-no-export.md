@@ -1,4 +1,6 @@
 # BGP No Export Community
+![photo1689958127](https://github.com/DariaShantalova/dariashantalova.github.io/assets/34622678/174b9962-ef28-482a-ad18-2f3d456a84f0)
+
 **Before**
 ```
 R3#show ip bgp
