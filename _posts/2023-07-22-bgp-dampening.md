@@ -1,4 +1,6 @@
 # BGP Dampening
+![photo1690032047](https://github.com/DariaShantalova/dariashantalova.github.io/assets/34622678/8c241df7-5ca6-4835-b4ac-b84e9f6914d0)
+
 * by default disabled
 ```
 R2#show ip bgp dampening flap-statistics 
