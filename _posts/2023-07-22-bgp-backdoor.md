@@ -1,8 +1,10 @@
 # BGP Backdoor
-EBGP Ad is 20, OSPF 110
-R1, R2 - one customer with ospf route
-R3 - ISP - provides bgp route
-By default bgp route will win with lower ad
+EBGP Ad is 20, OSPF 110  
+R1, R2 - one customer with ospf route  
+R3 - ISP - provides bgp route  
+By default bgp route will win with lower ad  
+
+![photo1690060127](https://github.com/DariaShantalova/dariashantalova.github.io/assets/34622678/f358fe92-b812-4dea-92dd-41bff69912da)
 
 ## Before 2.2.2.2 via BGP
 ```
