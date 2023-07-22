@@ -14,6 +14,8 @@
 * Cluster List  - rid of the RR, in case we have several RR in one AS, loop of RRs
 
 ## Lab
+![photo1690053692](https://github.com/DariaShantalova/dariashantalova.github.io/assets/34622678/bb2af5e6-8a4f-4cba-9ddc-47502a8681ea)
+
 *Result*
 R3 gets route from R1 without full mesh (split horizon rule)
 ```
