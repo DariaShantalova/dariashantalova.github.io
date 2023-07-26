@@ -10,7 +10,9 @@
 * Best N - first and second best path
 * Group-best - set of path for each as
 ## Before
+
 ```
+
 R5# show ip bgp   
 BGP table version is 2, local router ID is 5.5.5.5
 Status codes: s suppressed, d damped, h history, * valid, > best, i - internal, 
@@ -46,8 +48,11 @@ RPKI validation codes: V valid, I invalid, N Not found
      Network          Next Hop            Metric LocPrf Weight Path
  *>i 6.6.6.6/32       4.4.4.4                  0    100      0 6 i
 R1#
+
 ```
+
 ## Additional config
+
 ```
 R2(config)#router bgp 12345
 R2(config-router)#address-family ipv4
