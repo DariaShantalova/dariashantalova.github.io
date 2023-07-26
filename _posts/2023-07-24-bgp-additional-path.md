@@ -47,6 +47,42 @@ RPKI validation codes: V valid, I invalid, N Not found
  *>i 6.6.6.6/32       4.4.4.4                  0    100      0 6 i
 R1#
 ```
+## Additional config
+```
+R2(config)#router bgp 12345
+R2(config-router)#address-family ipv4
+R2(config-router-af)#bgp additional-paths ?
+  install  Additional paths to install into RIB
+  select   Selection criteria to pick the paths
+R2(config-router-af)#bgp additional-paths install
+```
+```
+R2(config-router-af)#do show ip bgp      
+BGP table version is 5, local router ID is 2.2.2.2
+Status codes: s suppressed, d damped, h history, * valid, > best, i - internal, 
+              r RIB-failure, S Stale, m multipath, b backup-path, f RT-Filter, 
+              x best-external, a additional-path, c RIB-compressed, 
+Origin codes: i - IGP, e - EGP, ? - incomplete
+RPKI validation codes: V valid, I invalid, N Not found
+
+     Network          Next Hop            Metric LocPrf Weight Path
+ *bi 6.6.6.6/32       5.5.5.5                  0    100      0 6 i
+ *>i                  4.4.4.4                  0    100      0 6 i
+R2(config-router-af)#
+```
+```
+R1#show ip bgp
+BGP table version is 4, local router ID is 1.1.1.1
+Status codes: s suppressed, d damped, h history, * valid, > best, i - internal, 
+              r RIB-failure, S Stale, m multipath, b backup-path, f RT-Filter, 
+              x best-external, a additional-path, c RIB-compressed, 
+Origin codes: i - IGP, e - EGP, ? - incomplete
+RPKI validation codes: V valid, I invalid, N Not found
+
+     Network          Next Hop            Metric LocPrf Weight Path
+ *>i 6.6.6.6/32       4.4.4.4                  0    100      0 6 i
+R1#
+```
 
 
 
