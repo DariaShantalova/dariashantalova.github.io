@@ -14,7 +14,7 @@ Hello sent to 224.0.0.5
 * no dup Router Id  
 * Hello and Dead timers equal
 
-  ```
+```
   debug ip ospf hello
 *Aug  7 01:58:21.395: OSPF-2 HELLO Fa0/0: Send hello to 224.0.0.5 area 0 from 192.168.12.1
 R1#
