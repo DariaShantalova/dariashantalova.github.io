@@ -12,4 +12,26 @@ Hello sent to 224.0.0.5
 * same primary subnet (hellos are not sent on secondary subnets, though they can be advertised)  
 * same OSPF area type (regular, stab, not-so-stubby NSSA)  
 * no dup Router Id  
-* Hello and Dead timers equal  
+* Hello and Dead timers equal
+
+  ```
+  debug ip ospf hello
+*Aug  7 01:58:21.395: OSPF-2 HELLO Fa0/0: Send hello to 224.0.0.5 area 0 from 192.168.12.1
+R1#
+*Aug  7 01:58:28.755: OSPF-2 HELLO Fa0/0: Rcv hello from 2.2.2.2 area 0 192.168.12.2
+R1#
+*Aug  7 01:58:30.923: OSPF-2 HELLO Fa0/0: Send hello to 224.0.0.5 area 0 from 192.168.12.1
+R1#
+*Aug  7 01:58:40.755: OSPF-2 HELLO Fa0/0: Send hello to 224.0.0.5 area 0 from 192.168.12.1
+R1#
+*Aug  7 01:58:49.775: OSPF-2 HELLO Fa0/0: Send hello to 224.0.0.5 area 0 from 192.168.12.1
+R1#
+*Aug  7 01:58:59.559: OSPF-2 HELLO Fa0/0: Send hello to 224.0.0.5 area 0 from 192.168.12.1
+R1#show ip ospf neig    
+*Aug  7 01:59:08.759: %OSPF-5-ADJCHG: Process 2, Nbr 2.2.2.2 on FastEthernet0/0 from FULL to DOWN, Neighbor Down: Dead timer expired
+R1#show ip ospf neig
+*Aug  7 01:59:09.351: OSPF-2 HELLO Fa0/0: Send hello to 224.0.0.5 area 0 from 192.168.12.1
+R1#no debug ip ospf hello
+*Aug  7 01:59:19.251: OSPF-2 HELLO Fa0/0: Send hello to 224.0.0.5 area 0 from 192.168.12.1
+```
+
