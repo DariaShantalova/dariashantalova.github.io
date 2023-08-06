@@ -8,6 +8,8 @@ Encapsulated in IP with IP protocol type 89
 * Link State Request
 * Link State Update
 * Link State Ack
+  <img width="873" alt="Screenshot 2023-08-07 at 00 56 30" src="https://github.com/DariaShantalova/dariashantalova.github.io/assets/34622678/12f10b68-abb0-41e6-8077-3f2055a6bf78">
+
 
 LSA - data structures, that contained in LSDB and tranfered in LSU. (not OSPF messages by themself)
 ```
