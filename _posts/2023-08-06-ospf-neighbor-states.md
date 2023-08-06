@@ -1,4 +1,4 @@
-# OSPF 6 Neighbor States
+# OSPF 7 Neighbor States
 ```
 *Aug  7 01:32:29.739: OSPF-2 ADJ   Fa0/0: Neighbor change event
 *Aug  7 01:32:29.743: OSPF-2 ADJ   Fa0/0: DR/BDR election
