@@ -1,5 +1,6 @@
 # Python Open File
 ```
-with open('test.yaml', 'w') as f:
-	for element in list:
+with open('servers_list.txt', 'r') as f:
+    for el in f:
+        server = f.read()
 ```
