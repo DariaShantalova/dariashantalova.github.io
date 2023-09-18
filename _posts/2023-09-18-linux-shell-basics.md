@@ -26,5 +26,10 @@ referencing a variable *${var}*
 back quotes executes content
 <img width="1016" alt="Screenshot 2023-09-18 at 22 21 22" src="https://github.com/DariaShantalova/dariashantalova.github.io/assets/34622678/ca052c5b-4599-4caa-ad95-e4b3189463d9">
 
+## Filters, cut command
+Cut command in detail <https://www.geeksforgeeks.org/cut-command-linux-examples/>
+<img width="1014" alt="Screenshot 2023-09-18 at 22 33 57" src="https://github.com/DariaShantalova/dariashantalova.github.io/assets/34622678/d3ea707d-96f9-4def-ae1b-085a21831018">
+
+
 
 
