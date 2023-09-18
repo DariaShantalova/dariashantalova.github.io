@@ -27,8 +27,18 @@ back quotes executes content
 <img width="1016" alt="Screenshot 2023-09-18 at 22 21 22" src="https://github.com/DariaShantalova/dariashantalova.github.io/assets/34622678/ca052c5b-4599-4caa-ad95-e4b3189463d9">
 
 ## Filters, cut command
-Cut command in detail <https://www.geeksforgeeks.org/cut-command-linux-examples/>
+**Cut** command in detail <https://www.geeksforgeeks.org/cut-command-linux-examples/>
 <img width="1014" alt="Screenshot 2023-09-18 at 22 33 57" src="https://github.com/DariaShantalova/dariashantalova.github.io/assets/34622678/d3ea707d-96f9-4def-ae1b-085a21831018">
+**sort** command
+<img width="1019" alt="Screenshot 2023-09-18 at 22 44 34" src="https://github.com/DariaShantalova/dariashantalova.github.io/assets/34622678/51407091-d444-43ea-a1d6-8051bc2f3c5b">
+**uniq** command - print unique lines
+<img width="1017" alt="Screenshot 2023-09-18 at 22 47 08" src="https://github.com/DariaShantalova/dariashantalova.github.io/assets/34622678/0ca60d65-52cb-4147-92c9-f545b7660d99">
+**wc** - world counting
+<img width="1013" alt="Screenshot 2023-09-18 at 22 48 49" src="https://github.com/DariaShantalova/dariashantalova.github.io/assets/34622678/716bd129-e358-4c8f-a073-53e22344c564">
+
+
+
+
 
 
 
