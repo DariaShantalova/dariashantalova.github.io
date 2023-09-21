@@ -4,13 +4,15 @@ Manages CPU, Memory, File Systems rescources.
 
 Can be checked with a command **uname -r**
 <img width="1016" alt="Screenshot 2023-09-21 at 16 01 09" src="https://github.com/DariaShantalova/dariashantalova.github.io/assets/34622678/3d420872-d8ea-4789-ab9b-14d67a0e5f09">
-3 - kernel version
-10 - magor release
-el7 - oracle linux 7
-uek (not in the screenshot) - unbreakable entterprise kerner
-only el7 or el8 - standart red hat comapatible kernel
+3 - kernel version  
 
-Documentation in Linux Kernel can be found on <https://kernelnewbies.org/Documents>
+10 - magor release   
+
+el7 - oracle linux 7  
+uek (not in the screenshot) - unbreakable entterprise kerner    
+only el7 or el8 - standart red hat comapatible kernel    
+
+Documentation in Linux Kernel can be found on <https://kernelnewbies.org/Documents>     
 The kernel can be downloaded from <https://www.kernel.org/>
 
 To check which kernels do we have on system 
