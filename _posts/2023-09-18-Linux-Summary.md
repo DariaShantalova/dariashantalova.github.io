@@ -1,5 +1,5 @@
 # Linux Summary
-* Difference between Unix and Linux 
+* [Difference between Unix and Linux](https://dariashantalova.github.io/2023/09/18/Linux-Unix-difference.html)
 * [Man](https://dariashantalova.github.io/2023/09/18/Linux-man.html>)
 * [Shell basics](<https://dariashantalova.github.io/2023/09/18/linux-shell-basics.html>)
 * [eBPF](<https://dariashantalova.github.io/2023/09/21/linux-eBPF.html>)
