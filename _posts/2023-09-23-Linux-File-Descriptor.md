@@ -62,6 +62,12 @@ Removal **exec 5>&-**
 **ls -la /proc/proc_id/fd/fd_id**     
 <img width="792" alt="Screenshot 2023-09-25 at 00 30 00" src="https://github.com/DariaShantalova/dariashantalova.github.io/assets/34622678/74251601-421c-4b29-9a3d-e634d7ca195b">
 
+## Sharing one file descriptor
+if the shell script has two commands, p1 and p2 and each takes turn writing into a file x, the position where p1 finishes will be remembered by p2, as they are using the same open-file-description table.
+
+<img width="1011" alt="Screenshot 2023-09-25 at 00 57 55" src="https://github.com/DariaShantalova/dariashantalova.github.io/assets/34622678/5ba32656-59aa-4d6c-bffc-fa3549e3110a">
+
+
 
 
 
