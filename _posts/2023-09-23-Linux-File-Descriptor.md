@@ -11,6 +11,13 @@ Standart numbers
 * 2 - sys.stderr
 * -1 - err (python raises the exception)
 
+## View all available FD
+```
+ls /proc/$$/fd
+0  1  2  255
+```
+
+
 ## Example, How many file's descriptors are used (2)
 Open creates a file descriptor and a print writes to another file descriptor
 ```
