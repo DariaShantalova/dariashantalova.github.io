@@ -65,6 +65,19 @@ Removal **exec 5>&-**
 ## Sharing one file descriptor
 if the shell script has two commands, p1 and p2 and each takes turn writing into a file x, the position where p1 finishes will be remembered by p2, as they are using the same open-file-description table.
 
+```
+#!/bin/bash
+exec 123>a.txt # open file descriptor 123 to a.txt (note that you have to choose one, bash won't choose a number)
+exec 124>&123 # open file descriptor 124 as a copy of 123 (same file description)
+
+# now we have two file descriptors pointing to the same file description
+echo 11 >&123 # write to descriptor 123
+echo 12 >&124 # write to descriptor 124
+
+exec 123>&- # close file descriptor 123
+exec 124>&- # close file descriptor 124
+```
+
 <img width="1011" alt="Screenshot 2023-09-25 at 00 57 55" src="https://github.com/DariaShantalova/dariashantalova.github.io/assets/34622678/5ba32656-59aa-4d6c-bffc-fa3549e3110a">
 
 
