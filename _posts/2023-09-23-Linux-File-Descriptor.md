@@ -1,4 +1,4 @@
-# File descryptor
+# File descriptor
 "In Unix everything is a file"
 File descryptor is a positive integer value, used by file system calls instead of file path.
 It's given to the user-level process.
