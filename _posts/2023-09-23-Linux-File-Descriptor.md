@@ -128,10 +128,18 @@ CDROMJECT = 0x5309 (linux specific)
 ...
 ```
 
+## FD Flags
+File descriptors are process-wide. When used in a function, or a thread, they always work the same way. That way is controlled by status flags. In Linux, there are five status flags:
+* O_APPEND -  Causes all writes to occur at the end of the file, ignoring file position.
+* O_ASYNC: A signal is generated when read or write is possible; only available for terminals, pseudoterminals, sockets, pipes, and FIFOs
+* O_DIRECT: Skip page cache for I/O. Complicated, with many constraints; do not use except in very limited special circumstances.
+* O_NOATIME: Do not update last access time.
+* O_NONBLOCK: Non-blocking I/O. Instead of waiting (blocking) when data is not immediately available, or cannot be immediately sent, return a short count. If nothing can be sent or received, read()/write() etc. return -1 with errno == EWOULDBLOCK.
+O_NONBLOCK has no effect on normal files or block devices.
 
+<img width="487" alt="Screenshot 2023-09-25 at 01 54 33" src="https://github.com/DariaShantalova/dariashantalova.github.io/assets/34622678/cc9b79b7-8484-4696-8d3e-2d87d49689d6">
 
-
-
+## Ulimit
 To check how many open files we can have **ulimit -a**       
 You can have 1024 entities to be opened by your process.    
 
