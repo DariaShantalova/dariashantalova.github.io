@@ -6,3 +6,4 @@
 * [User/Context/Kernel mode](<https://dariashantalova.github.io/2023/09/21/kernel-user-mode.html>)
 * [Linux Ip config](https://dariashantalova.github.io/2023/09/22/Linux-ip-config.html)
 * [DNS](https://dariashantalova.github.io/2023/09/23/Linux-DNS.html)
+* [File Descriptor](https://dariashantalova.github.io/2023/09/23/Linux-File-Descriptor.html)
