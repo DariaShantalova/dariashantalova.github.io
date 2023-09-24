@@ -13,10 +13,57 @@ Standart numbers
 
 ## View all available FD
 proc - virtual file system, utilities like top, ps and etc takes data from proc, to read more [here](http://mydebianblog.blogspot.com/2008/07/proc.html)
+$$ - Represents the process ID of the current shell. For shell scripts, this is the process ID under which the scripts run.
 ```
 ls /proc/$$/fd
 0  1  2  255
 ```
+```
+ls /proc/32204/fd
+0  1  2  4  5  6
+```
+```
+ls -la /proc/32204/fd 
+total 0
+dr-x------ 2 root root    0 Sep 23 03:31 .
+dr-xr-xr-x 9 root screen  0 Jul 22 11:05 ..
+lr-x------ 1 root root   64 Sep 23 14:55 0 -> /dev/null
+l-wx------ 1 root root   64 Sep 23 14:55 1 -> /dev/null
+l-wx------ 1 root root   64 Sep 23 14:55 2 -> /dev/null
+lrwx------ 1 root root   64 Sep 23 14:55 4 -> socket:[1186085175]
+lrwx------ 1 root root   64 Sep 23 14:55 5 -> /run/utmp
+lrwx------ 1 root root   64 Sep 23 14:55 6 -> /dev/ptmx
+```
+
+## Creating FD
+exec [n]<&word will duplicate an input file descriptor in bash.
+exec [n]>&word will duplicate an output file descriptor in bash.
+
+exec 6>&1 creates a copy of file descriptor 1, i.e. STDOUT, and stores it as file descriptor 6.
+exec 1>&6 copies 6 back unto 1.
+It could also have been moved by appending a dash, i.e. 1<&6- closing descriptor 6 and leaving only 1.
+
+```
+exec 5>&1 - creates a copy of file descriptor 1, i.e. STDOUT, and stores it as file descriptor 5.
+exec 5>command.txt
+ls -la>&5
+cat command.txt
+```
+ <img width="451" alt="Screenshot 2023-09-25 at 00 15 12" src="https://github.com/DariaShantalova/dariashantalova.github.io/assets/34622678/0e7c947e-bc97-436d-921a-15fdd30b319b">
+ 
+<img width="507" alt="Screenshot 2023-09-25 at 00 17 05" src="https://github.com/DariaShantalova/dariashantalova.github.io/assets/34622678/fe7cc095-4117-4b34-8d79-03a37cc758c9">
+
+<img width="567" alt="Screenshot 2023-09-25 at 00 20 38" src="https://github.com/DariaShantalova/dariashantalova.github.io/assets/34622678/56312db2-4f2f-4a23-a57d-01719a8f2457">
+
+Removal **exec 5>&-**
+<img width="512" alt="Screenshot 2023-09-25 at 00 21 42" src="https://github.com/DariaShantalova/dariashantalova.github.io/assets/34622678/62b58f66-eef7-4646-8b67-e5651f0beab0">
+
+**ps -aux | grep firefox**     
+**ls -la /proc/proc_id/fd/fd_id**     
+<img width="792" alt="Screenshot 2023-09-25 at 00 30 00" src="https://github.com/DariaShantalova/dariashantalova.github.io/assets/34622678/74251601-421c-4b29-9a3d-e634d7ca195b">
+
+
+
 
 
 ## Example, How many file's descriptors are used (2)
