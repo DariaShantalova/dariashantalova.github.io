@@ -12,6 +12,7 @@ Standart numbers
 * -1 - err (python raises the exception)
 
 ## View all available FD
+proc - virtual file system, utilities like top, ps and etc takes data from proc, to read more [here](http://mydebianblog.blogspot.com/2008/07/proc.html)
 ```
 ls /proc/$$/fd
 0  1  2  255
