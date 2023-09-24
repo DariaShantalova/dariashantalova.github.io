@@ -166,6 +166,9 @@ Every time somebody uses the file, the file position in open-file table is going
 Each process in the kernel has a structure task_struct per thread.
 <img width="886" alt="Screenshot 2023-09-25 at 01 39 43" src="https://github.com/DariaShantalova/dariashantalova.github.io/assets/34622678/484184ba-a703-44e7-bc49-9fad9d49b978">
 
+<img width="665" alt="Screenshot 2023-09-25 at 01 46 06" src="https://github.com/DariaShantalova/dariashantalova.github.io/assets/34622678/323c695a-6a88-4eb8-a79f-de9416e96e06">
+
+
  This struct has a pointer to another structure called the files_struct, and that contains an array of pointers to a file struct. 
  <img width="880" alt="Screenshot 2023-09-25 at 01 41 43" src="https://github.com/DariaShantalova/dariashantalova.github.io/assets/34622678/5ae6b137-901c-4167-8468-a2e731a45c0f">
 
