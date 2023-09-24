@@ -80,6 +80,12 @@ exec 124>&- # close file descriptor 124
 
 <img width="1011" alt="Screenshot 2023-09-25 at 00 57 55" src="https://github.com/DariaShantalova/dariashantalova.github.io/assets/34622678/5ba32656-59aa-4d6c-bffc-fa3549e3110a">
 
+## fdinfo directory
+containts per file descriptor info
+pos ? flags ? mnt_id ?
+
+<img width="487" alt="Screenshot 2023-09-25 at 01 54 33" src="https://github.com/DariaShantalova/dariashantalova.github.io/assets/34622678/74d6e477-109d-4459-b59d-6ca072fe6efe">
+
 
 
 
