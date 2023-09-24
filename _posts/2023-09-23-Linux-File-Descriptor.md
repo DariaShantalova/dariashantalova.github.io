@@ -161,6 +161,18 @@ When we create an open file.
 There will be an entry in open-file table with the count how many processes have this file open.
 Every time somebody uses the file, the file position in open-file table is going to be updated.
 
+## Realisation
+
+Each process in the kernel has a structure task_struct per thread.
+<img width="886" alt="Screenshot 2023-09-25 at 01 39 43" src="https://github.com/DariaShantalova/dariashantalova.github.io/assets/34622678/484184ba-a703-44e7-bc49-9fad9d49b978">
+
+ This struct has a pointer to another structure called the files_struct, and that contains an array of pointers to a file struct. 
+ <img width="880" alt="Screenshot 2023-09-25 at 01 41 43" src="https://github.com/DariaShantalova/dariashantalova.github.io/assets/34622678/5ae6b137-901c-4167-8468-a2e731a45c0f">
+
+ This final struct is actually what holds all file flags, a current position, and a lot of other information about the open file: such as its type, inode, device, etc. All such entries among all running threads are what we call the open file descriptor table.
+ 
+<img width="827" alt="Screenshot 2023-09-25 at 01 43 53" src="https://github.com/DariaShantalova/dariashantalova.github.io/assets/34622678/bd08ec1d-dd6d-4afe-ad21-294e357a299f">
+
 ## V-Node 
 
 
