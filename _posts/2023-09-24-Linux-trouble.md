@@ -99,7 +99,8 @@ tmpfs            233M     0  233M   0% /sys/fs/cgroup
 The fuser command (Find USER) is a process management tool that identifies processes using a file, a directory, or a socket.
 * **fuser /var/log/bad.log**
 
-# journalct -u postgrepsql
+## journalct -u postgrepsql
+for watching logs, more [here](https://habr.com/ru/companies/ruvds/articles/533918/)
 ```
 root@i-00fdeba7c81f27013:/# journalctl -p err
 -- Logs begin at Mon 2023-09-25 11:35:49 UTC, end at Mon 2023-09-25 11:39:58 
