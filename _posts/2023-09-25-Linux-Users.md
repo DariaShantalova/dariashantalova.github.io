@@ -157,5 +157,24 @@ PermitRootLogin no
 ```
 **sudo systemctl restart sshd**
 
+### zip folter to archive
+```
+ sudo tar -czf mariyam.tar.gz mariyam/
+```
+wrong
+```
+[natasha@ststor01 data]$ zip -r john.tar.gz /data/john
+  adding: data/john/ (stored 0%)
+  adding: data/john/nautilus2.txt (stored 0%)
+  adding: data/john/nautilus3.txt (stored 0%)
+  adding: data/john/nautilus1.txt (stored 0%)
+[natasha@ststor01 data]$ ls
+john  john.tar.gz
+[natasha@ststor01 data]$ cp john.tar.gz /home
+cp: cannot create regular file '/home/john.tar.gz': Permission denied
+[natasha@ststor01 data]$ sudo cp john.tar.gz /home
+[natasha@ststor01 data]$ rm john.tar.gz
+[natasha@ststor01 data]$ cd /home
+```
 
 
