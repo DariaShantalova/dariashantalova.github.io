@@ -155,6 +155,7 @@ PermitRootLogin no
 #MaxAuthTries 6
 #MaxSessions 10
 ```
+**sudo systemctl restart sshd**
 
 
 
