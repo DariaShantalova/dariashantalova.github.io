@@ -1,5 +1,37 @@
 # Troubleshoot commands
 
+## chmod
+Change file permissions
+```
+root@ip-172-31-21-14:/# curl 127.0.0.1:80
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>403 Forbidden</title>
+</head><body>
+<h1>Forbidden</h1>
+<p>You don't have permission to access this resource.</p>
+<hr>
+<address>Apache/2.4.52 (Ubuntu) Server at 127.0.0.1 Port 80</address>
+</body></html>
+root@ip-172-31-21-14:/# ls -l /var/www/html/index.html
+-rw------- 1 root root 16 Aug  1  2022 /var/www/html/index.html
+root@ip-172-31-21-14:/# chmod 777  /var/www/html/index.html
+root@ip-172-31-21-14:/# ls -l /var/www/html/index.html
+-rwxrwxrwx 1 root root 16 Aug  1  2022 /var/www/html/index.html
+root@ip-172-31-21-14:/# curl 127.0.0.1:80
+hello sadserver
+```
+```
+root@ip-172-31-21-14:/# ls -l | grep test.txt
+-rw-r--r--   1 root root     2 Sep 25 12:26 test.txt
+root@ip-172-31-21-14:/# chmod 545 test.txt
+root@ip-172-31-21-14:/# ls -l | grep test.txt
+-r-xr--r-x   1 root root     2 Sep 25 12:26 test.txt
+root@ip-172-31-21-14:/# echo 11 > test.txt
+root@ip-172-31-21-14:/# cat test.txt
+11
+```
+
 ## cut 
 * **cut -d ' '**
 * **cut -d ' ' -f1** fields number to be cut
