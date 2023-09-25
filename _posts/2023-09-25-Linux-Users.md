@@ -139,10 +139,22 @@ Maximum number of days between password change          : 99999
 Number of days of warning before password expires       : 7
 ```
 
-### Copy all files with user James to /beta dir
+### Copy all files with user James to /news dir
 ```
-find /home/usersdata -user james
-find /home/usersdata -user james -exec cp --parents {}/beta \;
+find /home/usersdata -type f -user mark -exec cp --parents {} /news \;
 ```
+
+## disable ssh root login
+```
+sudo vi /etc/ssh/sshd_config
+# Authentication:
+
+#LoginGraceTime 2m
+PermitRootLogin no
+#StrictModes yes
+#MaxAuthTries 6
+#MaxSessions 10
+```
+
 
 
