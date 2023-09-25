@@ -200,6 +200,34 @@ root       934  0.0  0.1   4964   808 pts/0    R+   11:50   0:00 grep postgrepsq
 * **pwdx PID** - find the working directory of the process
 
 
+## nginx
+```
+/var/log/nginx/error.log
+
+```
+2023/09/25 13:39:54 [crit] 840#840: *3 open() "/var/www/html/index.nginx-debian.html" failed (24: Too many open files), client: 127.0.0.1, server: _, request: "HEAD / HTTP/1.1", host: "127.0.0.1"
+admin@i-0d5314323db880589:/var/log/nginx$ cat /etc/systemd/system/nginx.service
+[Unit]
+Description=The NGINX HTTP and reverse proxy server
+After=syslog.target network-online.target remote-fs.target nss-lookup.target
+Wants=network-online.target
+
+[Service]
+Type=forking
+PIDFile=/run/nginx.pid
+ExecStartPre=/usr/sbin/nginx -t
+ExecStart=/usr/sbin/nginx
+ExecReload=/usr/sbin/nginx -s reload
+ExecStop=/bin/kill -s QUIT $MAINPID
+PrivateTmp=true
+LimitNOFILE=10
+
+[Install]
+WantedBy=multi-user.target
+admin@i-0d5314323db880589:/var/log/nginx$ vim /etc/systemd/system/nginx.service
+admin@i-0d5314323db880589:/var/log/nginx$ sudo vim /etc/systemd/system/nginx.service
+admin@i-0d5314323db880589:/var/log/nginx$ systemctl restart nginx
+```
 
 ## kill 
 * **kill -9 PID**
@@ -228,6 +256,23 @@ Sep 25 11:41:12 i-00fdeba7c81f27013 dhclient[464]: XMT: Solicit on ens5, interva
 
 ## systemctl
 systemctl 
+```
+sudo systemctl daemon-reload
+admin@i-0d5314323db880589:/var/log/nginx$ systemctl restart nginx
+Failed to restart nginx.service: Access denied
+See system logs and 'systemctl status nginx.service' for details.
+admin@i-0d5314323db880589:/var/log/nginx$ sudo systemctl restart nginx
+admin@i-0d5314323db880589:/var/log/nginx$ curl -Is 127.0.0.1:80
+HTTP/1.1 200 OK
+Server: nginx/1.18.0
+Date: Mon, 25 Sep 2023 13:46:52 GMT
+Content-Type: text/html
+Content-Length: 612
+Last-Modified: Sun, 11 Sep 2022 15:58:42 GMT
+Connection: keep-alive
+ETag: "631e05b2-264"
+Accept-Ranges: bytes
+```
 ```
 sudo systemctl start postgresql
 root@i-00fdeba7c81f27013:/opt/pgdata# 
