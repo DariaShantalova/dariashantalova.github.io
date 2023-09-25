@@ -1,0 +1,88 @@
+# Linux Users
+
+## Add new user
+* edit passw, shadow
+* add the user to group file (not necessery)
+* set initial password
+* create **chown** and **chmod** users home dir
+* config roles and permissions
+
+```
+[banner@stapp03 ~]$ rm -r /var/www/mark
+rm: remove write-protected directory '/var/www/mark'? 
+[banner@stapp03 ~]$ sudo userdel mark
+[banner@stapp03 ~]$ sudo useradd -d /var/www/mark mark -u 1817
+useradd: warning: the home directory already exists.
+Not copying any file from skel directory into it.
+```
+
+## tools useradd, userdel, usermod 
+AIX: mkuser, rmuser, chuser
+
+## /etc/passwd
+Stored in the /etc/passwd file
+* Login
+* Encrypted password placeholder
+* UID - identifies user to the system, root uid 0
+* GID - file available within group, to share - change files group owner
+* GEOS
+* Home directory
+* Login shell
+```
+cat /etc/passwd | head
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+```
+
+## Encrypted password stored in /etc/shadow
+can be read only by superuser
+```
+[banner@stapp03 ~]$ sudo cat /etc/shadow | head
+
+We trust you have received the usual lecture from the local System
+Administrator. It usually boils down to these three things:
+
+    #1) Respect the privacy of others.
+    #2) Think before you type.
+    #3) With great power comes great responsibility.
+
+[sudo] password for banner: 
+root:$6$jQ/8ISYU9MlFxz$XC0PrSuMHsYD9wnvh90UQza.fOo3hy6NqWxac2dqsWIoYRuuZ/.7HKLiDE.SiPbH7oGtInf6wVyzd6OYJ8Isd0:19422:0:99999:7:::
+bin:*:19121:0:99999:7:::
+daemon:*:19121:0:99999:7:::
+adm:*:19121:0:99999:7:::
+lp:*:19121:0:99999:7:::
+sync:*:19121:0:99999:7:::
+shutdown:*:19121:0:99999:7:::
+halt:*:19121:0:99999:7:::
+mail:*:19121:0:99999:7:::
+operator:*:19121:0:99999:7:::
+```
+
+## /etc/group
+* group name
+* encrypted password placeholder
+* gid number
+* list of members
+```
+ cat /etc/group | head
+root:x:0:
+bin:x:1:
+daemon:x:2:
+sys:x:3:
+adm:x:4:
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mem:x:8:
+kmem:x:9:
+```
+
