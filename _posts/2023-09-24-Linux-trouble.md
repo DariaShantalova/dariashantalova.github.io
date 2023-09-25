@@ -65,6 +65,24 @@ admin@ip-172-31-27-155:/$ cat /home/admin/access.log | cut -d ' ' -f1 | sort | u
 The fuser command (Find USER) is a process management tool that identifies processes using a file, a directory, or a socket.
 * **fuser /var/log/bad.log**
 
+## grep 
+```
+       -A NUM, --after-context=NUM
+              Print NUM lines of trailing context after matching lines.
+              Places a line containing a group separator (--) between
+              contiguous groups of matches.  With the -o or
+              --only-matching option, this has no effect and a warning
+              is given.
+
+       -B NUM, --before-context=NUM
+              Print NUM lines of leading context before matching lines.
+              Places a line containing a group separator (--) between
+              contiguous groups of matches.  With the -o or
+              --only-matching option, this has no effect and a warning
+              is given.\
+```
+
+
 ## lsof
 * second column - pid
 * **lsof** list open files
@@ -112,6 +130,19 @@ admin@ip-172-31-27-155:/$ cat /home/admin/access.log | cut -d ' ' -f1 | sort | u
       9 99.33.244.41
       6 99.6.61.4
 ```
+
+## xargs
+передача вывода другой команды как аргумент к другой
+```
+$ ls
+one.sh one.py two.sh two.py
+
+$ find . -name "*.sh"| xargs rm -rf
+
+$ ls
+one.py two.py
+```
+
 
 
 
