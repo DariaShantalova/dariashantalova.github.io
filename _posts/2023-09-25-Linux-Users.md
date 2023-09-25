@@ -102,3 +102,13 @@ mem:x:8:
 kmem:x:9:
 ```
 
+## Examples
+### Add user with no interactive shell
+```
+[banner@stapp03 ~]$ sudo useradd -s /sbin/nologin yousuf
+[banner@stapp03 ~]$ id yousuf
+uid=1002(yousuf) gid=1002(yousuf) groups=1002(yousuf)
+[banner@stapp03 ~]$ cat /etc/passwd | grep yousuf
+yousuf:x:1002:1002::/home/yousuf:/sbin/nologin
+```
+
