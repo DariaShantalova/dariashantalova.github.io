@@ -1,16 +1,5 @@
 # Troubleshoot commands
 
-1. Use find and pass the results to grep via xargs
-
-(Open window once more to see the solution to the first part).
-
-2. (Solution to 1) for example: find /home/admin/ -type f -name "*.txt" |xargs grep -c 'Alice' , adding the results from three files: echo -n 411 > /home/admin/solution
-
-(Open window once more to see the solution to the second part).
-
-3. (Solution to 2) grep Alice -A 1 /home/admin/1342-0.txt (or open the file with less or vi and enter /Alice). Appending this result: echo 156 >> /home/admin/solution.
-
-
 ## cut 
 * **cut -d ' '**
 * **cut -d ' ' -f1** fields number to be cut
@@ -54,7 +43,20 @@ bash: syntax error near unexpected token `newline'
 admin@ip-172-31-27-155:/$ cat /home/admin/access.log | cut -d ' ' -f1 | sort | uniq -c | sort -r | head -1 | cut -d ' ' -f6 > /home/admin/highestip.txt
 ```
 
-
+## df
+**df -h**
+```
+df -h
+Filesystem       Size  Used Avail Use% Mounted on
+udev             224M     0  224M   0% /dev
+tmpfs             47M  1.5M   46M   4% /run
+/dev/nvme1n1p1   7.7G  1.2G  6.1G  17% /
+tmpfs            233M     0  233M   0% /dev/shm
+tmpfs            5.0M     0  5.0M   0% /run/lock
+tmpfs            233M     0  233M   0% /sys/fs/cgroup
+/dev/nvme1n1p15  124M  278K  124M   1% /boot/efi
+/dev/nvme0n1     8.0G  8.0G   28K 100% /opt/pgdata
+```
 ## head 
 ```
  cat /home/admin/access.log | cut -d ' ' -f1 | sort | uniq -c | sort -r | head -1
@@ -64,6 +66,32 @@ admin@ip-172-31-27-155:/$ cat /home/admin/access.log | cut -d ' ' -f1 | sort | u
 ## fuser
 The fuser command (Find USER) is a process management tool that identifies processes using a file, a directory, or a socket.
 * **fuser /var/log/bad.log**
+
+# journalct -u postgrepsql
+```
+root@i-00fdeba7c81f27013:/# journalctl -p err
+-- Logs begin at Mon 2023-09-25 11:35:49 UTC, end at Mon 2023-09-25 11:39:58 
+Sep 25 11:35:49 ip-10-0-0-22 kernel: ena 0000:00:05.0: LLQ is not supported F
+Sep 25 11:35:49 ip-10-0-0-22 systemd-fstab-generator[212]: Failed to create u
+Sep 25 11:35:49 ip-10-0-0-22 systemd[206]: /usr/lib/systemd/system-generators
+Sep 25 11:36:44 i-00fdeba7c81f27013 systemd-fstab-generator[631]: Failed to c
+Sep 25 11:36:44 i-00fdeba7c81f27013 systemd-fstab-generator[631]: Failed to c
+Sep 25 11:36:44 i-00fdeba7c81f27013 systemd[625]: /usr/lib/systemd/system-gen
+Sep 25 11:36:45 i-00fdeba7c81f27013 systemd[1]: Failed to start PostgreSQL Cl
+Sep 25 11:39:58 i-00fdeba7c81f27013 systemd[1]: Failed to start PostgreSQL Cl
+root@i-00fdeba7c81f27013:/# cat /var/log/syslog | tail
+Sep 25 11:39:19 i-00fdeba7c81f27013 dhclient[464]: XMT: Solicit on ens5, interval 113220ms.
+Sep 25 11:39:57 i-00fdeba7c81f27013 systemd[1]: Starting PostgreSQL Cluster 14-main...
+Sep 25 11:39:58 i-00fdeba7c81f27013 postgresql@14-main[869]: Error: /usr/lib/postgresql/14/bin/pg_ctl /usr/lib/postgresql/14/bin/pg_ctl start -D /opt/pgdata/main -l /var/log/postgresql/postgresql-14-main.log -s -o  -c config_file="/etc/postgresql/14/main/postgresql.conf"  exited with status 1:
+Sep 25 11:39:58 i-00fdeba7c81f27013 postgresql@14-main[869]: 2023-09-25 11:39:57.992 UTC [874] FATAL:  could not create lock file "postmaster.pid": No space left on device
+Sep 25 11:39:58 i-00fdeba7c81f27013 postgresql@14-main[869]: pg_ctl: could not start server
+Sep 25 11:39:58 i-00fdeba7c81f27013 postgresql@14-main[869]: Examine the log output.
+Sep 25 11:39:58 i-00fdeba7c81f27013 systemd[1]: postgresql@14-main.service: Can't open PID file /run/postgresql/14-main.pid (yet?) after start: No such file or directory
+Sep 25 11:39:58 i-00fdeba7c81f27013 systemd[1]: postgresql@14-main.service: Failed with result 'protocol'.
+Sep 25 11:39:58 i-00fdeba7c81f27013 systemd[1]: Failed to start PostgreSQL Cluster 14-main.
+Sep 25 11:41:12 i-00fdeba7c81f27013 dhclient[464]: XMT: Solicit on ens5, interval 128380ms.
+```
+
 
 ## grep 
 ```
@@ -90,18 +118,72 @@ The fuser command (Find USER) is a process management tool that identifies proce
 * **lsof | grep bad.log** 
 * **lsof -p PID** - detailes
 
+
+## ps
+```
+ps aux | grep postgrepsql
+root       934  0.0  0.1   4964   808 pts/0    R+   11:50   0:00 grep postgrepsql
+```
 ## pwdx
 * **pwdx PID** - find the working directory of the process
+
+
 
 ## kill 
 * **kill -9 PID**
 
-# sort
+## sort
 ```
 cat /home/admin/access.log | cut -d ' ' -f1 | sort | uniq -c | sort -r | head
     482 66.249.73.135
     364 46.105.14.53
     357 130.237.218.86
+```
+## syslog cat /var/log/syslog
+```
+cat /var/log/syslog | tail -f
+ep 25 11:39:19 i-00fdeba7c81f27013 dhclient[464]: XMT: Solicit on ens5, interval 113220ms.
+Sep 25 11:39:57 i-00fdeba7c81f27013 systemd[1]: Starting PostgreSQL Cluster 14-main...
+Sep 25 11:39:58 i-00fdeba7c81f27013 postgresql@14-main[869]: Error: /usr/lib/postgresql/14/bin/pg_ctl /usr/lib/postgresql/14/bin/pg_ctl start -D /opt/pgdata/main -l /var/log/postgresql/postgresql-14-main.log -s -o  -c config_file="/etc/postgresql/14/main/postgresql.conf"  exited with status 1:
+Sep 25 11:39:58 i-00fdeba7c81f27013 postgresql@14-main[869]: 2023-09-25 11:39:57.992 UTC [874] FATAL:  could not create lock file "postmaster.pid": No space left on device
+Sep 25 11:39:58 i-00fdeba7c81f27013 postgresql@14-main[869]: pg_ctl: could not start server
+Sep 25 11:39:58 i-00fdeba7c81f27013 postgresql@14-main[869]: Examine the log output.
+Sep 25 11:39:58 i-00fdeba7c81f27013 systemd[1]: postgresql@14-main.service: Can't open PID file /run/postgresql/14-main.pid (yet?) after start: No such file or directory
+Sep 25 11:39:58 i-00fdeba7c81f27013 systemd[1]: postgresql@14-main.service: Failed with result 'protocol'.
+Sep 25 11:39:58 i-00fdeba7c81f27013 systemd[1]: Failed to start PostgreSQL Cluster 14-main.
+Sep 25 11:41:12 i-00fdeba7c81f27013 dhclient[464]: XMT: Solicit on ens5, interval 128380ms.
+```
+
+## systemctl
+systemctl 
+```
+sudo systemctl start postgresql
+root@i-00fdeba7c81f27013:/opt/pgdata# 
+```
+* **sudo systemctl status postgresql** - no difference :(
+Before
+```
+root@i-00fdeba7c81f27013:/# sudo systemctl status postgresql
+● postgresql.service - PostgreSQL RDBMS
+   Loaded: loaded (/lib/systemd/system/postgresql.service; enabled; vendor pr
+   Active: active (exited) since Mon 2023-09-25 11:36:45 UTC; 2min 16s ago
+  Process: 666 ExecStart=/bin/true (code=exited, status=0/SUCCESS)
+ Main PID: 666 (code=exited, status=0/SUCCESS)
+
+Sep 25 11:36:45 i-00fdeba7c81f27013 systemd[1]: Starting PostgreSQL RDBMS...
+Sep 25 11:36:45 i-00fdeba7c81f27013 systemd[1]: Started PostgreSQL RDBMS.
+```
+After
+```
+sudo systemctl status postgresql
+● postgresql.service - PostgreSQL RDBMS
+   Loaded: loaded (/lib/systemd/system/postgresql.service; enabled; vendor preset: enable
+   Active: active (exited) since Mon 2023-09-25 11:36:45 UTC; 12min ago
+  Process: 666 ExecStart=/bin/true (code=exited, status=0/SUCCESS)
+ Main PID: 666 (code=exited, status=0/SUCCESS)
+
+Sep 25 11:36:45 i-00fdeba7c81f27013 systemd[1]: Starting PostgreSQL RDBMS...
+Sep 25 11:36:45 i-00fdeba7c81f27013 systemd[1]: Started PostgreSQL RDBMS.
 ```
 
 
