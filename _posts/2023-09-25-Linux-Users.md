@@ -19,6 +19,22 @@ Not copying any file from skel directory into it.
 ## tools useradd, userdel, usermod 
 AIX: mkuser, rmuser, chuser
 
+## Add to group 
+```
+[steve@stapp02 ~]$ sudo groupadd nautilus_sftp_users
+
+We trust you have received the usual lecture from the local System
+Administrator. It usually boils down to these three things:
+
+    #1) Respect the privacy of others.
+    #2) Think before you type.
+    #3) With great power comes great responsibility.
+
+[sudo] password for steve: 
+[steve@stapp02 ~]$ sudo adduser -G nautilus_sftp_users mohammed
+[steve@stapp02 ~]$ id mohammed
+uid=1002(mohammed) gid=1003(mohammed) groups=1003(mohammed),1002(nautilus_sftp_users)
+```
 ## /etc/passwd
 Stored in the /etc/passwd file
 * Login
