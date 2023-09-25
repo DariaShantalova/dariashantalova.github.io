@@ -109,7 +109,46 @@ Sep 25 11:41:12 i-00fdeba7c81f27013 dhclient[464]: XMT: Solicit on ens5, interva
               --only-matching option, this has no effect and a warning
               is given.\
 ```
+## iptables
+**iptables -L** - to list policies
+```
+# iptables -L
+Chain INPUT (policy ACCEPT)
+target     prot opt source               destination         
+DROP       tcp  --  anywhere             anywhere             tcp dpt:http
 
+Chain FORWARD (policy ACCEPT)
+target     prot opt source               destination         
+
+Chain OUTPUT (policy ACCEPT)
+target     prot opt source               destination         
+root@ip-172-31-21-14:/#
+```
+```
+ iptables -L --line-numbers
+Chain INPUT (policy ACCEPT)
+num  target     prot opt source               destination         
+1    DROP       tcp  --  anywhere             anywhere             tcp dpt:http
+
+Chain FORWARD (policy ACCEPT)
+num  target     prot opt source               destination         
+
+Chain OUTPUT (policy ACCEPT)
+num  target     prot opt source               destination         
+root@ip-172-31-21-14:/# 
+```
+root@ip-172-31-21-14:/# iptables -D INPUT 1
+root@ip-172-31-21-14:/# curl 127.0.0.1:80
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>403 Forbidden</title>
+</head><body>
+<h1>Forbidden</h1>
+<p>You don't have permission to access this resource.</p>
+<hr>
+<address>Apache/2.4.52 (Ubuntu) Server at 127.0.0.1 Port 80</address>
+</body></html>
+```
 
 ## lsof
 * second column - pid
