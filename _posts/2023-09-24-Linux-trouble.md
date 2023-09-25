@@ -156,7 +156,9 @@ target     prot opt source               destination
 Chain OUTPUT (policy ACCEPT)
 target     prot opt source               destination         
 root@ip-172-31-21-14:/#
+
 ```
+
 ```
  iptables -L --line-numbers
 Chain INPUT (policy ACCEPT)
