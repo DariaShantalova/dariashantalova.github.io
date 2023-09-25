@@ -112,3 +112,16 @@ uid=1002(yousuf) gid=1002(yousuf) groups=1002(yousuf)
 yousuf:x:1002:1002::/home/yousuf:/sbin/nologin
 ```
 
+### User without home directory
+```
+[steve@stapp02 ~]$ sudo adduser -M anita
+[steve@stapp02 ~]$ cd /etc/passwd | grep anita
+-bash: cd: /etc/passwd: Not a directory
+[steve@stapp02 ~]$ cat /etc/passwd | grep anita
+anita:x:1002:1002::/home/anita:/bin/bash
+[steve@stapp02 ~]$ cat /etc/passwd | grep root
+root:x:0:0:root:/root:/bin/bash
+operator:x:11:0:operator:/root:/sbin/nologin
+```
+
+
