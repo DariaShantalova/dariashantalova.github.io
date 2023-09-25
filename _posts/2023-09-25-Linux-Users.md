@@ -124,4 +124,25 @@ root:x:0:0:root:/root:/bin/bash
 operator:x:11:0:operator:/root:/sbin/nologin
 ```
 
+### User expiration date
+```
+tony@stapp01 ~]$ sudo adduser mark -e 2021-02-17
+[tony@stapp01 ~]$ id mark
+uid=1002(mark) gid=1002(mark) groups=1002(mark)
+[tony@stapp01 ~]$ sudo chage -l mark
+Last password change                                    : Sep 25, 2023
+Password expires                                        : never
+Password inactive                                       : never
+Account expires                                         : Feb 17, 2021
+Minimum number of days between password change          : 0
+Maximum number of days between password change          : 99999
+Number of days of warning before password expires       : 7
+```
+
+### Copy all files with user James to /beta dir
+```
+find /home/usersdata -user james
+find /home/usersdata -user james -exec cp --parents {}/beta \;
+```
+
 
