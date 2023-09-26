@@ -20,6 +20,8 @@ user::rw-
 group::r--
 other::r--
 ```
+## setfacl -m u:user_login:r,user_login2:w
+m - edit current acl
 ```
 tony@stapp01 etc]$ setfacl -m u:anita:-,eric:r /etc/resolv.conf 
 setfacl: /etc/resolv.conf: Operation not permitted
