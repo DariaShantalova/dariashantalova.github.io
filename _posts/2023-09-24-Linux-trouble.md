@@ -234,6 +234,38 @@ admin@i-0d5314323db880589:/var/log/nginx$ systemctl restart nginx
 ## kill 
 * **kill -9 PID**
 
+## sed
+### substitution
+replace word unix with linux
+/g - replace for all places
+/1 - for 1
+/2 for 2
+```
+sed 's/unix/linux' file.txt
+```
+only in string 3
+```
+sed 3 's/unix/linux' file.txt
+```
+in string 1-5
+```
+sed 1,5 's/unix/linux' file.txt
+```
+```
+sudo sed -i 's/Text/Cloud/g' /root/nautilus.xml
+[clint@stbkp01 ~]$ sudo grep 'Text' /root/nautilus.xml | wc -c
+0
+[clint@stbkp01 ~]$ sudo grep 'Cloud' /root/nautilus.xml | wc -c
+1650
+```
+
+### remove strings
+delete n-s string
+```
+sed 'nd' filename.txt
+```
+
+
 ## sort
 ```
 cat /home/admin/access.log | cut -d ' ' -f1 | sort | uniq -c | sort -r | head
