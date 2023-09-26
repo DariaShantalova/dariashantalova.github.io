@@ -6,9 +6,15 @@
   * kernel probs system hardware and then start **init** process, that is always 1
   * filesystem must be checked by init, system daemons to be started (init scripts by init)
 
+
+
 ## booting to a single-user mode/recovery/maintainence mode
 * while booting
 * or if the system is already ip - **shutdown** or **telinit**
+
+## Kernel in /boot
+<img width="1021" alt="Screenshot 2023-09-26 at 16 56 10" src="https://github.com/DariaShantalova/dariashantalova.github.io/assets/34622678/103b791f-86b0-4530-bce8-a2afae4d4f6f">
+
 
 # Example task
 change the default runlevel so that they can boot in GUI (graphical user interface) by default. 
