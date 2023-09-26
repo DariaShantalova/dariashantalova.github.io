@@ -104,3 +104,47 @@ Here is that TZ value again, this time on standard output so that you
 can use the /usr/bin/tzselect command in shell scripts:
 America/Argentina/La_Rioja
 ```
+
+## NTP
+```
+[tony@stapp01 ~]$ ntpstat
+synchronised to NTP server (5.161.186.39) at stratum 3
+   time correct to within 952 ms
+   polling server every 64 s
+```
+```
+tony@stapp01 ~]$ sudo vi /etc/ntp.conf
+[tony@stapp01 ~]$ timedatectl
+      Local time: Tue 2023-09-26 16:45:39 UTC
+  Universal time: Tue 2023-09-26 16:45:39 UTC
+        RTC time: n/a
+       Time zone: UTC (UTC, +0000)
+     NTP enabled: no
+NTP synchronized: yes
+ RTC in local TZ: no
+      DST active: n/a
+[tony@stapp01 ~]$ systemctl status ntp
+Unit ntp.service could not be found.
+[tony@stapp01 ~]$ systemctl enable ntpd
+Failed to execute operation: The name org.freedesktop.PolicyKit1 was not provided by any .service files
+[tony@stapp01 ~]$ sudo systemctl enable ntpd
+Created symlink from /etc/systemd/system/multi-user.target.wants/ntpd.service to /usr/lib/systemd/system/ntpd.service.
+[tony@stapp01 ~]$ systemctl status ntp
+Unit ntp.service could not be found.
+[tony@stapp01 ~]$ systemctl start ntpd
+Failed to start ntpd.service: The name org.freedesktop.PolicyKit1 was not provided by any .service files
+See system logs and 'systemctl status ntpd.service' for details.
+
+[tony@stapp01 ~]$ sudo systemctl start ntpd
+[tony@stapp01 ~]$ systemctl status ntp
+Unit ntp.service could not be found.
+[tony@stapp01 ~]$ systemctl status ntpd
+● ntpd.service - Network Time Service
+   Loaded: loaded (/usr/lib/systemd/system/ntpd.service; enabled; vendor preset: disabled)
+   Active: active (running) since Tue 2023-09-26 16:46:56 UTC; 8s ago
+  Process: 1112 ExecStart=/usr/sbin/ntpd -u ntp:ntp $OPTIONS (code=exited, status=0/SUCCESS)
+ Main PID: 1113 (ntpd)
+   CGroup: /docker/5ce7b9c6756cab46ac7dc971046b6513593da40deed9a27dfe6d91659f078c39/system.slice/ntpd.service
+           └─1113 /usr/sbin/ntpd -u ntp:ntp -g
+```
+
