@@ -70,6 +70,7 @@ ammar
 
 ## Create cronjob for current user -e flag; crontab -e
 check - **crontab -l**
+**crontab -e -u root**
 ```
 tony@stapp01 ~]$ crontab -l
 */5 * * * * echo hello > /tmp/cron_text
