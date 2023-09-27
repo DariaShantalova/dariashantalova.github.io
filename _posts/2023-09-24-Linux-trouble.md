@@ -156,7 +156,6 @@ target     prot opt source               destination
 Chain OUTPUT (policy ACCEPT)
 target     prot opt source               destination         
 root@ip-172-31-21-14:/#
-
 ```
 
 ```
@@ -171,6 +170,8 @@ num  target     prot opt source               destination
 Chain OUTPUT (policy ACCEPT)
 num  target     prot opt source               destination         
 root@ip-172-31-21-14:/# 
+```
+
 ```
 root@ip-172-31-21-14:/# iptables -D INPUT 1
 root@ip-172-31-21-14:/# curl 127.0.0.1:80
@@ -205,6 +206,7 @@ root       934  0.0  0.1   4964   808 pts/0    R+   11:50   0:00 grep postgrepsq
 ## nginx
 ```
 /var/log/nginx/error.log
+```
 
 ```
 2023/09/25 13:39:54 [crit] 840#840: *3 open() "/var/www/html/index.nginx-debian.html" failed (24: Too many open files), client: 127.0.0.1, server: _, request: "HEAD / HTTP/1.1", host: "127.0.0.1"
