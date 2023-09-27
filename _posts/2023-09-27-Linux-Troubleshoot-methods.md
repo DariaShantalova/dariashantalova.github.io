@@ -126,33 +126,35 @@ CPU
 
 ## LLDP
 **sudo lldpcli show neighbors**
+
 ```
 # yum -y install lldpad
-
 - For Ubuntu
 # apt-get install lldpad
 2. Run the LLDP Daemon:
 # lldpad -d
 3. turn on interfaces
-```
 for i in `ls /sys/class/net/ | grep 'eth\|ens\|eno'` ;
-
 do echo "enabling lldp for interface: $i" ;
-
 lldptool set-lldp -i $i adminStatus=rxtx ;
-
 lldptool -T -i $i -V sysName enableTx=yes;
-
 lldptool -T -i $i -V portDesc enableTx=yes ;
-
 lldptool -T -i $i -V sysDesc enableTx=yes;
-
 lldptool -T -i $i -V sysCap enableTx=yes;
-
 lldptool -T -i $i -V mngAddr enableTx=yes;
-
 done
+
 ```
+
+## arp 
+```
+arp
+```
+
+## strace 
+$ strace опции команда аргументы
+В самом простом варианте strace запускает переданную команду с её аргументами и выводит в стандартный поток ошибок все системные вызовы команды. 
+
 
 
 
