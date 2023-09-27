@@ -17,4 +17,4 @@
 * [docker](https://dariashantalova.github.io/2023/09/25/docker.html)
 * [file permissions, get facl](https://dariashantalova.github.io/2023/09/25/Linux-file-perm.html)
 * [adduser, deluser, limit access](https://dariashantalova.github.io/2023/09/25/Linux-Users.html)
-* [chmod, cut, df -h (disk usage), fuser (user process), lsof (what process use dir) , nginx sed, sort, uniq)(https://dariashantalova.github.io/2023/09/24/Linux-trouble.html)
+* [chmod, cut, df -h (disk usage), fuser (user process), lsof (what process use dir) , nginx sed, sort, uniq](https://dariashantalova.github.io/2023/09/24/Linux-trouble.html)
